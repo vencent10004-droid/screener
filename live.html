@@ -35,18 +35,28 @@
 </style></head><body>
 <h1>⚡ 실시간 모니터링 — 전일 스크리닝 상위 30종목</h1>
 <div class="summary">
-  🔴 장 마감 (마지막 시세) · 갱신: <b>16:12:58</b> · 기준 스크리닝: 20260819<br>
+  🔴 장 마감 (마지막 시세) · 갱신: <b>16:20:14</b> · 기준 스크리닝: 20260819<br>
   🚀 신고가 돌파 <b style="color:#d33">2개</b> ·
   🔥 돌파 임박 <b style="color:#e68a00">1개</b> ·
   <a href="./">📊 전체 스크리닝 리포트 보기</a><br>
   <span class="sub">페이지 60초·데이터 5분마다 자동 갱신 · 거래량배율 = 당일 누적 ÷ 20일 평균(장 초반엔 낮게 표시)</span>
+</div>
+<div style="margin-bottom:10px">
+  <select id="fMarket" onchange="applyFilter()" style="padding:6px 10px; margin-right:8px">
+    <option value="">전체 시장</option><option value="KOSPI">코스피</option>
+    <option value="KOSDAQ">코스닥</option>
+  </select>
+  <label style="font-size:13px; white-space:nowrap">
+    <input type="checkbox" id="fBrk" onchange="applyFilter()"> 돌파·임박 종목만 보기
+  </label>
 </div>
 <table>
 <thead><tr>
   <th>종목</th><th>현재가/등락</th><th>최근 60일</th><th>20일 신고가</th><th>거래량배율</th><th>고가권</th>
 </tr></thead>
 <tbody>
-        <tr style="background:#fde8e8" data-brk="1">
+        <tr style="background:#fde8e8" data-market="KOSPI"
+            data-brk="1">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=003230" target="_blank">삼양식품</a><br>
               <span class="sub">003230 · KOSPI · 전일 50점 · 🟢 매집진행</span></td>
           <td class="num c-price">1,397,000<br>
@@ -56,7 +66,8 @@
           <td class="num c-vol">140%</td>
           <td class="num c-pos">0.88</td>
         </tr>
-        <tr style="background:#fff3e0" data-brk="1">
+        <tr style="background:#fff3e0" data-market="KOSDAQ"
+            data-brk="1">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=032820" target="_blank">우리기술</a><br>
               <span class="sub">032820 · KOSDAQ · 전일 50점 · 🟢 매집진행</span></td>
           <td class="num c-price">12,190<br>
@@ -66,7 +77,8 @@
           <td class="num c-vol">75%</td>
           <td class="num c-pos">0.67</td>
         </tr>
-        <tr style="background:#fde8e8" data-brk="1">
+        <tr style="background:#fde8e8" data-market="KOSDAQ"
+            data-brk="1">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=403870" target="_blank">HPSP</a><br>
               <span class="sub">403870 · KOSDAQ · 전일 70점 · 🔥 돌파임박</span></td>
           <td class="num c-price">48,000<br>
@@ -76,7 +88,8 @@
           <td class="num c-vol">212%</td>
           <td class="num c-pos">0.68</td>
         </tr>
-        <tr style="background:#e8f5e9" data-brk="0">
+        <tr style="background:#e8f5e9" data-market="KOSDAQ"
+            data-brk="0">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=196170" target="_blank">알테오젠</a><br>
               <span class="sub">196170 · KOSDAQ · 전일 45점 · 🟢 매집진행</span></td>
           <td class="num c-price">339,500<br>
@@ -86,7 +99,8 @@
           <td class="num c-vol">181%</td>
           <td class="num c-pos">0.80</td>
         </tr>
-        <tr style="background:#e8f5e9" data-brk="0">
+        <tr style="background:#e8f5e9" data-market="KOSPI"
+            data-brk="0">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=010060" target="_blank">OCI홀딩스</a><br>
               <span class="sub">010060 · KOSPI · 전일 53점 · 🟢 매집진행</span></td>
           <td class="num c-price">290,000<br>
@@ -96,7 +110,8 @@
           <td class="num c-vol">78%</td>
           <td class="num c-pos">0.53</td>
         </tr>
-        <tr style="background:#e8f5e9" data-brk="0">
+        <tr style="background:#e8f5e9" data-market="KOSDAQ"
+            data-brk="0">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=222800" target="_blank">심텍</a><br>
               <span class="sub">222800 · KOSDAQ · 전일 52점 · 🟢 매집진행</span></td>
           <td class="num c-price">114,900<br>
@@ -106,7 +121,8 @@
           <td class="num c-vol">68%</td>
           <td class="num c-pos">0.59</td>
         </tr>
-        <tr style="background:#e8f5e9" data-brk="0">
+        <tr style="background:#e8f5e9" data-market="KOSPI"
+            data-brk="0">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=018260" target="_blank">삼성에스디에스</a><br>
               <span class="sub">018260 · KOSPI · 전일 48점 · 🟢 매집진행</span></td>
           <td class="num c-price">233,000<br>
@@ -116,7 +132,8 @@
           <td class="num c-vol">48%</td>
           <td class="num c-pos">0.62</td>
         </tr>
-        <tr style="background:#e8f5e9" data-brk="0">
+        <tr style="background:#e8f5e9" data-market="KOSPI"
+            data-brk="0">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=042700" target="_blank">한미반도체</a><br>
               <span class="sub">042700 · KOSPI · 전일 58점 · 🟢 매집진행</span></td>
           <td class="num c-price">225,500<br>
@@ -126,7 +143,8 @@
           <td class="num c-vol">79%</td>
           <td class="num c-pos">0.85</td>
         </tr>
-        <tr style="background:#e8f5e9" data-brk="0">
+        <tr style="background:#e8f5e9" data-market="KOSPI"
+            data-brk="0">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=207940" target="_blank">삼성바이오로직스</a><br>
               <span class="sub">207940 · KOSPI · 전일 48점 · 🟢 매집진행</span></td>
           <td class="num c-price">1,574,000<br>
@@ -136,7 +154,8 @@
           <td class="num c-vol">89%</td>
           <td class="num c-pos">0.28</td>
         </tr>
-        <tr style="background:#e8f5e9" data-brk="0">
+        <tr style="background:#e8f5e9" data-market="KOSPI"
+            data-brk="0">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=009830" target="_blank">한화솔루션</a><br>
               <span class="sub">009830 · KOSPI · 전일 46점 · 🟢 매집진행</span></td>
           <td class="num c-price">35,200<br>
@@ -146,7 +165,8 @@
           <td class="num c-vol">52%</td>
           <td class="num c-pos">0.34</td>
         </tr>
-        <tr style="background:#e8f5e9" data-brk="0">
+        <tr style="background:#e8f5e9" data-market="KOSPI"
+            data-brk="0">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=001440" target="_blank">대한전선</a><br>
               <span class="sub">001440 · KOSPI · 전일 47점 · 🟢 매집진행</span></td>
           <td class="num c-price">28,350<br>
@@ -156,7 +176,8 @@
           <td class="num c-vol">42%</td>
           <td class="num c-pos">0.30</td>
         </tr>
-        <tr style="background:#e8f5e9" data-brk="0">
+        <tr style="background:#e8f5e9" data-market="KOSDAQ"
+            data-brk="0">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=357780" target="_blank">솔브레인</a><br>
               <span class="sub">357780 · KOSDAQ · 전일 54점 · 🟢 매집진행</span></td>
           <td class="num c-price">332,500<br>
@@ -166,7 +187,8 @@
           <td class="num c-vol">53%</td>
           <td class="num c-pos">0.50</td>
         </tr>
-        <tr style="background:#e8f5e9" data-brk="0">
+        <tr style="background:#e8f5e9" data-market="KOSPI"
+            data-brk="0">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=007660" target="_blank">이수페타시스</a><br>
               <span class="sub">007660 · KOSPI · 전일 63점 · 🟢 매집진행</span></td>
           <td class="num c-price">105,000<br>
@@ -176,7 +198,8 @@
           <td class="num c-vol">88%</td>
           <td class="num c-pos">0.79</td>
         </tr>
-        <tr style="background:#e8f5e9" data-brk="0">
+        <tr style="background:#e8f5e9" data-market="KOSPI"
+            data-brk="0">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=066570" target="_blank">LG전자</a><br>
               <span class="sub">066570 · KOSPI · 전일 48점 · 🟢 매집진행</span></td>
           <td class="num c-price">202,500<br>
@@ -186,7 +209,8 @@
           <td class="num c-vol">42%</td>
           <td class="num c-pos">0.40</td>
         </tr>
-        <tr style="background:#e8f5e9" data-brk="0">
+        <tr style="background:#e8f5e9" data-market="KOSPI"
+            data-brk="0">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=373220" target="_blank">LG에너지솔루션</a><br>
               <span class="sub">373220 · KOSPI · 전일 55점 · 🟢 매집진행</span></td>
           <td class="num c-price">358,000<br>
@@ -196,7 +220,8 @@
           <td class="num c-vol">89%</td>
           <td class="num c-pos">0.10</td>
         </tr>
-        <tr style="background:#fffde7" data-brk="0">
+        <tr style="background:#fffde7" data-market="KOSPI"
+            data-brk="0">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=012450" target="_blank">한화에어로스페이스</a><br>
               <span class="sub">012450 · KOSPI · 전일 55점 · 🟡 매집초기</span></td>
           <td class="num c-price">1,167,000<br>
@@ -206,7 +231,8 @@
           <td class="num c-vol">117%</td>
           <td class="num c-pos">0.40</td>
         </tr>
-        <tr style="background:#e8f5e9" data-brk="0">
+        <tr style="background:#e8f5e9" data-market="KOSDAQ"
+            data-brk="0">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=064760" target="_blank">티씨케이</a><br>
               <span class="sub">064760 · KOSDAQ · 전일 46점 · 🟢 매집진행</span></td>
           <td class="num c-price">229,500<br>
@@ -216,7 +242,8 @@
           <td class="num c-vol">81%</td>
           <td class="num c-pos">0.28</td>
         </tr>
-        <tr style="background:#e8f5e9" data-brk="0">
+        <tr style="background:#e8f5e9" data-market="KOSPI"
+            data-brk="0">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=028050" target="_blank">삼성E&A</a><br>
               <span class="sub">028050 · KOSPI · 전일 59점 · 🟢 매집진행</span></td>
           <td class="num c-price">48,050<br>
@@ -226,7 +253,8 @@
           <td class="num c-vol">59%</td>
           <td class="num c-pos">0.16</td>
         </tr>
-        <tr style="background:#e8f5e9" data-brk="0">
+        <tr style="background:#e8f5e9" data-market="KOSPI"
+            data-brk="0">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=079550" target="_blank">LIG디펜스앤에어로스페이스</a><br>
               <span class="sub">079550 · KOSPI · 전일 56점 · 🟢 매집진행</span></td>
           <td class="num c-price">787,000<br>
@@ -236,7 +264,8 @@
           <td class="num c-vol">61%</td>
           <td class="num c-pos">0.46</td>
         </tr>
-        <tr style="background:#e8f5e9" data-brk="0">
+        <tr style="background:#e8f5e9" data-market="KOSDAQ"
+            data-brk="0">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=083650" target="_blank">비에이치아이</a><br>
               <span class="sub">083650 · KOSDAQ · 전일 72점 · 🟢 매집진행</span></td>
           <td class="num c-price">59,900<br>
@@ -246,7 +275,8 @@
           <td class="num c-vol">72%</td>
           <td class="num c-pos">0.18</td>
         </tr>
-        <tr style="background:#e8f5e9" data-brk="0">
+        <tr style="background:#e8f5e9" data-market="KOSPI"
+            data-brk="0">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=010120" target="_blank">LS ELECTRIC</a><br>
               <span class="sub">010120 · KOSPI · 전일 53점 · 🟢 매집진행</span></td>
           <td class="num c-price">199,200<br>
@@ -256,7 +286,8 @@
           <td class="num c-vol">67%</td>
           <td class="num c-pos">0.41</td>
         </tr>
-        <tr style="background:#e8f5e9" data-brk="0">
+        <tr style="background:#e8f5e9" data-market="KOSPI"
+            data-brk="0">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=011200" target="_blank">HMM</a><br>
               <span class="sub">011200 · KOSPI · 전일 49점 · 🟢 매집진행</span></td>
           <td class="num c-price">21,200<br>
@@ -266,7 +297,8 @@
           <td class="num c-vol">90%</td>
           <td class="num c-pos">0.06</td>
         </tr>
-        <tr style="background:#e8f5e9" data-brk="0">
+        <tr style="background:#e8f5e9" data-market="KOSPI"
+            data-brk="0">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=000720" target="_blank">현대건설</a><br>
               <span class="sub">000720 · KOSPI · 전일 73점 · 🟢 매집진행</span></td>
           <td class="num c-price">113,800<br>
@@ -276,7 +308,8 @@
           <td class="num c-vol">87%</td>
           <td class="num c-pos">0.30</td>
         </tr>
-        <tr style="background:#e8f5e9" data-brk="0">
+        <tr style="background:#e8f5e9" data-market="KOSPI"
+            data-brk="0">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=096770" target="_blank">SK이노베이션</a><br>
               <span class="sub">096770 · KOSPI · 전일 61점 · 🟢 매집진행</span></td>
           <td class="num c-price">125,900<br>
@@ -286,7 +319,8 @@
           <td class="num c-vol">53%</td>
           <td class="num c-pos">0.15</td>
         </tr>
-        <tr style="background:#e8f5e9" data-brk="0">
+        <tr style="background:#e8f5e9" data-market="KOSPI"
+            data-brk="0">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=443060" target="_blank">HD현대마린솔루션</a><br>
               <span class="sub">443060 · KOSPI · 전일 49점 · 🟢 매집진행</span></td>
           <td class="num c-price">203,000<br>
@@ -296,7 +330,8 @@
           <td class="num c-vol">101%</td>
           <td class="num c-pos">0.11</td>
         </tr>
-        <tr style="background:#fde8e8" data-brk="0">
+        <tr style="background:#fde8e8" data-market="KOSDAQ"
+            data-brk="0">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=095340" target="_blank">ISC</a><br>
               <span class="sub">095340 · KOSDAQ · 전일 64점 · 🔥 돌파임박</span></td>
           <td class="num c-price">168,700<br>
@@ -306,7 +341,8 @@
           <td class="num c-vol">152%</td>
           <td class="num c-pos">0.11</td>
         </tr>
-        <tr style="background:#e8f5e9" data-brk="0">
+        <tr style="background:#e8f5e9" data-market="KOSPI"
+            data-brk="0">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=078930" target="_blank">GS</a><br>
               <span class="sub">078930 · KOSPI · 전일 64점 · 🟢 매집진행</span></td>
           <td class="num c-price">113,600<br>
@@ -316,7 +352,8 @@
           <td class="num c-vol">96%</td>
           <td class="num c-pos">0.11</td>
         </tr>
-        <tr style="background:#e8f5e9" data-brk="0">
+        <tr style="background:#e8f5e9" data-market="KOSPI"
+            data-brk="0">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=005830" target="_blank">DB손해보험</a><br>
               <span class="sub">005830 · KOSPI · 전일 66점 · 🟢 매집진행</span></td>
           <td class="num c-price">177,400<br>
@@ -326,7 +363,8 @@
           <td class="num c-vol">111%</td>
           <td class="num c-pos">0.03</td>
         </tr>
-        <tr style="background:#fffde7" data-brk="0">
+        <tr style="background:#fffde7" data-market="KOSPI"
+            data-brk="0">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=006260" target="_blank">LS</a><br>
               <span class="sub">006260 · KOSPI · 전일 58점 · 🟡 매집초기</span></td>
           <td class="num c-price">313,500<br>
@@ -336,7 +374,8 @@
           <td class="num c-vol">132%</td>
           <td class="num c-pos">0.13</td>
         </tr>
-        <tr style="background:#e8f5e9" data-brk="0">
+        <tr style="background:#e8f5e9" data-market="KOSPI"
+            data-brk="0">
           <td class="c-name"><a href="https://finance.naver.com/item/main.naver?code=010950" target="_blank">S-Oil</a><br>
               <span class="sub">010950 · KOSPI · 전일 47점 · 🟢 매집진행</span></td>
           <td class="num c-price">142,600<br>
@@ -348,4 +387,15 @@
         </tr>
 </tbody></table>
 <p style="color:#888;font-size:12px">고가권 = (현재가-저가)/(고가-저가) · 본 자료는 투자 권유가 아닙니다. 투자 판단과 책임은 본인에게 있습니다.</p>
+<script>
+function applyFilter() {
+  const market = document.getElementById('fMarket').value;
+  const brkOnly = document.getElementById('fBrk').checked;
+  document.querySelectorAll('tbody tr').forEach(tr => {
+    const okMarket = !market || tr.dataset.market === market;
+    const okBrk = !brkOnly || tr.dataset.brk === '1';
+    tr.style.display = (okMarket && okBrk) ? '' : 'none';
+  });
+}
+</script>
 </body></html>
